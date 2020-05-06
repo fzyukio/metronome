@@ -28,6 +28,8 @@ nsamples = duration_ms * fs // 1000
 gap_length = gap_ms * fs // 1000
 
 beep_length = 10 * fs // 1000
+if beep_length % 2 == 1:
+    beep_length += 1
 half_beep_length = beep_length // 2
 
 array = np.zeros((nsamples,), dtype=np.float32)
